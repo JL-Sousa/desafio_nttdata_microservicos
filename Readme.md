@@ -27,4 +27,50 @@ Sistema composto por dois microsserviços Java Spring Boot, um API Gateway e Ser
 
 1. Clone o repositório:
    ```sh
-   git clone <url-do-repositorio>
+   git clone <https://github.com/JL-Sousa/desafio_nttdata_microservicos>
+
+2. Inicie o Eureka Server:
+    ```sh
+    cd eureka-server
+    mvn spring-boot:run
+
+3. Inicie o ms-produtos:
+
+     ```sh
+    cd catalogo-service
+    mvn spring-boot:run
+4. Inicie o ms-pedidos:
+
+    ```sh
+    cd simulador-pedidos-service
+    mvn spring-boot:run
+5. Inicie o api-gateway:
+
+    ```sh
+    cd api-gateway
+    mvn spring-boot:run
+Endpoints (via Gateway)
+### Catálogo de Produtos
+
+- `POST /produtos` - Cadastrar produto
+- `GET /produtos` - Listar produtos
+- `GET /produtos/{id}` - Consultar produto por ID
+
+#### Exemplo de requisição para cadastrar produto
+
+````json
+// POST /produtos
+{
+  "nome": "Notebook",
+  "descricao": "Notebook Gamer",
+  "preco": 4500.00
+}
+````
+
+### Simulador de Pedidos
+````json
+POST /pedidos
+{
+  "produtosIds": [1, 2, 3]
+}
+
