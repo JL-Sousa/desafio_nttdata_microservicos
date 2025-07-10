@@ -61,9 +61,9 @@ Endpoints (via Gateway)
 ````json
 // POST /produtos
 {
-  "nome": "Notebook",
-  "descricao": "Notebook Gamer",
-  "preco": 4500.00
+  "name": "Notebook",
+  "description": "Notebook Gamer",
+  "price": 4500.00
 }
 ````
 
